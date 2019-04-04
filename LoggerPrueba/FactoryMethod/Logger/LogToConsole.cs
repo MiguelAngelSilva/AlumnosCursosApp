@@ -9,24 +9,18 @@ namespace LoggerPrueba.FactoryMethod.Logger
 {
      public class LogToConsole:Logger
     {
-        string _message;
         string _date;
-        MessageType _messageType;
-
+        Message _message;
         public LogToConsole(Message message) {
             ReadAllSettings();
+            _message = message;
             //este campos se cargan desde el app.config
             _date = _dtNow;
-
-            _message = message.MessageProperty;
-            _messageType = message.MessageTypeProperty;
         }
         public override void LogMessage()
         {
             Console.WriteLine($"*******************************************");
-            Console.WriteLine(_messageType + " - " +_date + " - " + _message);
+            Console.WriteLine(_message.MessageTypeProperty + " - " + _date + " - " + _message.MessageProperty);
         }
-
-        
     }
 }

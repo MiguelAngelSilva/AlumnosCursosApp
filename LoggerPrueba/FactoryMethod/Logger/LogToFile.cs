@@ -11,29 +11,22 @@ namespace LoggerPrueba.FactoryMethod.Logger
     public class LogToFile : Logger
     {
         string _lines = string.Empty;
-
+        Message _message;
+        string _filePath;
+        string _date;
         public LogToFile(Message message)
         {
             ReadAllSettings();
+            _message = message;
             //estos campos se cargan desde el app.config
             _filePath = _filePathComplete;
             _date = _dtNow;
-
-            _message = message.MessageProperty;
-            _messageType = message.MessageTypeProperty;
-
         }
         public override void LogMessage()
         {
             ReadFile();
             WriteFile();
         }
-
-        string _filePath;
-        string _message;
-        string _date;
-        MessageType _messageType;
-
         private void ReadFile()
         {
             if (System.IO.File.Exists(_filePath))
@@ -43,7 +36,7 @@ namespace LoggerPrueba.FactoryMethod.Logger
         }
         private void WriteFile()
         {
-            _lines = _lines + Environment.NewLine + _messageType + " - " +  _date + " - " + _message;
+            _lines = _lines + Environment.NewLine + _message.MessageTypeProperty + " - " +  _date + " - " + _message.MessageProperty;
             using (StreamWriter sw = File.AppendText(_filePath))
             {
                 sw.WriteLine(_lines);

@@ -10,27 +10,22 @@ namespace LoggerPrueba.FactoryMethod.Logger
 {
     public class LogToDataBase : Logger
     {
-        string _message;
         string _date;
-        MessageType _messageType;
         string _ConnectionString;
+        Message _message;
 
         public LogToDataBase(Message message)
         {
             ReadAllSettings();
+            _message = message;
             //estos campos se cargan desde el app.config
-            
             _date = _dtNow;
             _ConnectionString = _cnn;
-
-            _message = message.MessageProperty;
-            _messageType = message.MessageTypeProperty;
-            
         }
 
         public override void LogMessage()
         {
-            CreateCommand("Insert into Log Values('" + _messageType + "', '" + _date + "', '" + _message + "')", _ConnectionString);
+            CreateCommand("Insert into Log Values('" + _message.MessageTypeProperty + "', '" + _date + "', '" + _message.MessageProperty + "')", _ConnectionString);
         }
 
         private static void CreateCommand(string queryString, string connectionString)
@@ -42,9 +37,6 @@ namespace LoggerPrueba.FactoryMethod.Logger
                 command.Connection.Open();
                 command.ExecuteNonQuery();
             }
-        }
-        
+        }   
     }
-
-    
 }

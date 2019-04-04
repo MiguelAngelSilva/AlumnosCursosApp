@@ -5,3 +5,10 @@ C:\Users\Migue\source\repos\LoggerPrueba\LoggerPrueba\obj\Debug\LoggerPrueba.csp
 C:\Users\Migue\source\repos\LoggerPrueba\LoggerPrueba\obj\Debug\LoggerPrueba.dll
 C:\Users\Migue\source\repos\LoggerPrueba\LoggerPrueba\obj\Debug\LoggerPrueba.pdb
 C:\Users\Migue\source\repos\LoggerPrueba\LoggerPrueba\obj\Debug\LoggerPrueba.csprojAssemblyReference.cache
+C:\Users\Migue\source\repos\AlumnosCursosApp\LoggerPrueba\bin\Debug\LoggerPrueba.dll.config
+C:\Users\Migue\source\repos\AlumnosCursosApp\LoggerPrueba\bin\Debug\LoggerPrueba.dll
+C:\Users\Migue\source\repos\AlumnosCursosApp\LoggerPrueba\bin\Debug\LoggerPrueba.pdb
+C:\Users\Migue\source\repos\AlumnosCursosApp\LoggerPrueba\obj\Debug\LoggerPrueba.csprojAssemblyReference.cache
+C:\Users\Migue\source\repos\AlumnosCursosApp\LoggerPrueba\obj\Debug\LoggerPrueba.csproj.CoreCompileInputs.cache
+C:\Users\Migue\source\repos\AlumnosCursosApp\LoggerPrueba\obj\Debug\LoggerPrueba.dll
+C:\Users\Migue\source\repos\AlumnosCursosApp\LoggerPrueba\obj\Debug\LoggerPrueba.pdb
