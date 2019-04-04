@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AlumnosCursosDBModelStoreContainer" CdmEntityContainer="AlumnosCursosDBEntities">
+    <EntitySetMapping Name="Alumnoes">
+      <EntityTypeMapping TypeName="AlumnosCursosDBModel.Alumno">
+        <MappingFragment StoreEntitySet="AlumnoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cursoes">
+      <EntityTypeMapping TypeName="AlumnosCursosDBModel.Curso">
+        <MappingFragment StoreEntitySet="CursoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NombreCurso" ColumnName="NombreCurso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estadoes">
+      <EntityTypeMapping TypeName="AlumnosCursosDBModel.Estado">
+        <MappingFragment StoreEntitySet="EstadoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Aprobado" ColumnName="Aprobado" />
+          <ScalarProperty Name="EnCurso" ColumnName="EnCurso" />
+          <ScalarProperty Name="Alumno_Id" ColumnName="Alumno_Id" />
+          <ScalarProperty Name="Curso_Id" ColumnName="Curso_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AlumnoCurso" TypeName="AlumnosCursosDBModel.AlumnoCurso" StoreEntitySet="AlumnoCurso">
+      <EndProperty Name="AlumnoSet">
+        <ScalarProperty Name="Id" ColumnName="Alumnos_Id" />
+      </EndProperty>
+      <EndProperty Name="CursoSet">
+        <ScalarProperty Name="Id" ColumnName="Cursos_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
